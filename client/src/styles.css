@@ -1,0 +1,101 @@
+/* Plain CSS — no framework. */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  background: #f3f4f6;
+  color: #1f2937;
+}
+
+h1, h2, h3 { margin: 0 0 12px; }
+h2 { font-size: 1.2rem; }
+h3 { font-size: 1rem; margin-top: 16px; }
+
+.container { max-width: 1100px; margin: 20px auto; padding: 0 16px; }
+
+.navbar {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 12px 24px; background: #1e3a8a; color: white;
+}
+.navbar h1 { font-size: 1.3rem; margin: 0; }
+.navbar .who { margin-right: 12px; }
+
+.card {
+  background: white; border-radius: 8px; padding: 20px; margin-bottom: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+input, select, textarea {
+  width: 100%; padding: 9px 10px; margin-bottom: 10px;
+  border: 1px solid #d1d5db; border-radius: 6px; font: inherit;
+}
+textarea { resize: vertical; }
+
+button {
+  padding: 9px 14px; border: none; border-radius: 6px; cursor: pointer;
+  background: #2563eb; color: white; font: inherit;
+}
+button:hover { background: #1d4ed8; }
+button:disabled { background: #9ca3af; cursor: not-allowed; }
+.btn-light { background: #e5e7eb; color: #1f2937; }
+.btn-light:hover { background: #d1d5db; }
+.btn-dark { background: #374151; }
+.btn-danger { background: #dc2626; }
+
+.row { display: flex; gap: 10px; }
+.row select { max-width: 200px; }
+
+.filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+.filters select, .filters input { width: auto; margin: 0; }
+.filters input { flex: 1; min-width: 200px; }
+
+.actions { display: flex; gap: 8px; align-items: center; margin: 12px 0; }
+.actions input, .actions select { margin: 0; }
+.actions select { max-width: 260px; }
+
+table { width: 100%; border-collapse: collapse; }
+th, td { text-align: left; padding: 10px 8px; border-bottom: 1px solid #e5e7eb; font-size: 0.92rem; }
+th { background: #f9fafb; }
+tbody tr { cursor: pointer; }
+tbody tr:hover { background: #f3f4f6; }
+tr.selected { background: #dbeafe !important; }
+
+.badge {
+  display: inline-block; padding: 2px 8px; border-radius: 12px;
+  font-size: 0.78rem; text-transform: capitalize; font-weight: 600;
+}
+.badge-open        { background: #fee2e2; color: #991b1b; }
+.badge-assigned    { background: #fef3c7; color: #92400e; }
+.badge-in_progress { background: #dbeafe; color: #1e40af; }
+.badge-resolved    { background: #dcfce7; color: #166534; }
+.badge-closed      { background: #e5e7eb; color: #374151; }
+
+.role {
+  font-size: 0.72rem; padding: 1px 6px; border-radius: 4px;
+  background: rgba(0, 0, 0, 0.12); text-transform: uppercase;
+}
+
+.stats { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
+.stat { text-align: center; padding: 14px; }
+.stat-value { font-size: 1.6rem; font-weight: 700; color: #1e3a8a; }
+
+.detail-head { display: flex; justify-content: space-between; align-items: start; }
+.history { list-style: none; padding: 0; margin: 0; }
+.history li { padding: 8px 0; border-bottom: 1px dashed #e5e7eb; }
+
+.muted { color: #6b7280; }
+.error { color: #dc2626; }
+.success { color: #16a34a; }
+
+.auth-page { min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+.auth-card { width: 360px; }
+.auth-card button { width: 100%; }
+.switch { text-align: center; margin-top: 12px; }
+.demo { font-size: 0.8rem; text-align: center; }
+
+@media (max-width: 700px) {
+  .stats { grid-template-columns: repeat(3, 1fr); }
+  .row { flex-direction: column; }
+  table { font-size: 0.8rem; }
+}
